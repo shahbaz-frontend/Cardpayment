@@ -1,0 +1,206 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+$BodyBackgroundColor: #fefefe;
+$MainThemeColor: #470c13;
+$OpenSansFontFamily: "Open Sans";
+$transitionEffect: all 0.5s ease;
+$WhiteColor: #ffffff;
+$BlackColor: #000000;
+$FontAwesome: "Font Awesome";
+$fontLobster: "Lobster";
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: $OpenSansFontFamily;
+}
+.card_payment_wrap {
+  background-color: $BodyBackgroundColor;
+  width: 100%;
+  height: 100%;
+  .card_design {
+    position: relative;
+    margin: 200px auto 0;
+    .main_card {
+      position: relative;
+      z-index: 2;
+      width: 430px;
+      height: 284px;
+      border-radius: 25px;
+      background-color: $MainThemeColor;
+      padding: 25px;
+      overflow: hidden;
+      &::after {
+        content: "";
+        position: absolute;
+        left: -200px;
+        top: -130px;
+        height: 550px;
+        width: 550px;
+        border: solid 1px $MainThemeColor;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: -130px;
+        top: -57px;
+        height: 400px;
+        width: 400px;
+        border: solid 1px $MainThemeColor;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .card_type_section {
+        text-align: right;
+        margin: 0 0 10px 0;
+        span {
+          i {
+            font-size: 50px;
+            color: $WhiteColor;
+          }
+        }
+      }
+      .card_chips {
+        img {
+          max-width: 45px;
+        }
+      }
+      .On_card_design {
+        margin: 25px 0 0 0;
+        .form-group {
+          margin: 0 0 15px 0;
+          input {
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            font-size: 30px;
+            color: $WhiteColor;
+            font-family: $fontLobster;
+            height: 30px;
+            padding: 0;
+            margin: 0 0 30px 0;
+            &::placeholder {
+              color: #f1f1ff;
+            }
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+          }
+          label {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: $WhiteColor;
+            margin: 0;
+            font-weight: 600;
+          }
+          input.cardOnname {
+            font-size: 16px;
+            font-family: $OpenSansFontFamily;
+            margin: 0;
+          }
+        }
+      }
+    }
+    .card_overlay {
+      position: absolute;
+      width: 430px;
+      height: 284px;
+      background-color: #f1f1f1;
+      border-radius: 25px;
+      left: 100px;
+      top: 80px;
+      box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+      &::before {
+        content: "";
+        width: 100%;
+        height: 60px;
+        background-color: #e8e8e8;
+        position: absolute;
+        left: 0;
+        top: 50px;
+      }
+    }
+  }
+  .card_details_section {
+    margin: 150px 0 0 0;
+    h2 {
+      font-size: 25px;
+      margin: 0 0 80px 0;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        height: 2px;
+        width: 70px;
+        background: $MainThemeColor;
+      }
+    }
+    form {
+      width: 100%;
+      .form-group {
+        position: relative;
+        margin: 0 0 50px 0;
+        label {
+          font-size: 13px;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #7c7c7c;
+        }
+        input {
+          border: none;
+          width: 100%;
+          height: 45px;
+          border-bottom: solid 1px $MainThemeColor;
+          border-radius: 0;
+          padding-left: 40px;
+          transition: $transitionEffect;
+          font-size: 20px;
+          font-weight: 500;
+          &:focus {
+            box-shadow: none;
+            outline: none;
+            border-bottom: solid 1px $MainThemeColor;
+          }
+        }
+        svg {
+          width: 22px;
+          position: absolute;
+          left: 4px;
+          bottom: 12px;
+          fill: $MainThemeColor;
+        }
+        .submit_buttons {
+          text-align: right;
+          button {
+            background-color: $MainThemeColor;
+            border: solid 2px $MainThemeColor;
+            color: $WhiteColor;
+            height: 45px;
+            padding: 0 35px;
+            border-radius: 6px;
+            font-size: 18px;
+            margin: 20px 0 0 0;
+            transition: $transitionEffect;
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+            &:hover {
+              background-color: transparent;
+              border: solid 2px $MainThemeColor;
+              color: $MainThemeColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
