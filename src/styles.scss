@@ -2,14 +2,17 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
+
 $BodyBackgroundColor: #fefefe;
-$MainThemeColor: #470c13;
+$MainThemeColor: #fd435b;
 $OpenSansFontFamily: "Open Sans";
 $transitionEffect: all 0.5s ease;
 $WhiteColor: #ffffff;
 $BlackColor: #000000;
 $FontAwesome: "Font Awesome";
-$fontLobster: "Lobster";
+$fontLobster: "Playfair Display", serif;
+$rotatedDots: #000000;
 html,
 body {
   height: 100%;
@@ -24,6 +27,51 @@ body {
   .card_design {
     position: relative;
     margin: 200px auto 0;
+    position: relative;
+    .card_iner_circle {
+      position: absolute;
+      left: -200px;
+      top: -130px;
+      height: 550px;
+      width: 550px;
+      border: dashed 1px $MainThemeColor;
+      border-radius: 50%;
+      z-index: 1;
+      animation: rotated 30s infinite linear;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        background: $rotatedDots;
+        border-radius: 50%;
+      }
+    }
+    .card_outer_circle {
+      position: absolute;
+      left: -130px;
+      top: -57px;
+      height: 400px;
+      width: 400px;
+      border: dashed 1px $MainThemeColor;
+      border-radius: 50%;
+      z-index: 1;
+      animation: rotated 30s infinite linear;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 80%;
+        left: 38px;
+        background: $rotatedDots;
+        border-radius: 50%;
+      }
+    }
     .main_card {
       position: relative;
       z-index: 2;
@@ -33,28 +81,6 @@ body {
       background-color: $MainThemeColor;
       padding: 25px;
       overflow: hidden;
-      &::after {
-        content: "";
-        position: absolute;
-        left: -200px;
-        top: -130px;
-        height: 550px;
-        width: 550px;
-        border: solid 1px $MainThemeColor;
-        border-radius: 50%;
-        z-index: -1;
-      }
-      &::before {
-        content: "";
-        position: absolute;
-        left: -130px;
-        top: -57px;
-        height: 400px;
-        width: 400px;
-        border: solid 1px $MainThemeColor;
-        border-radius: 50%;
-        z-index: -1;
-      }
       .card_type_section {
         text-align: right;
         margin: 0 0 10px 0;
@@ -115,7 +141,7 @@ body {
       border-radius: 25px;
       left: 100px;
       top: 80px;
-      box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
       &::before {
         content: "";
         width: 100%;
@@ -203,4 +229,17 @@ body {
       }
     }
   }
+}
+
+@-webkit-keyframes rotated {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes rotated {
+  0%   { -moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); }
+}
+@-ms-keyframes rotated {
+  0%   { -ms-transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); }
 }
